@@ -1,22 +1,26 @@
 package edu.illinois.jaa2.webbroadcast;
 
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class WebBroadcast extends JavaPlugin {
 
+    static Logger logger = null;
+
     @Override
     public void onEnable() {
+        logger = getLogger();
+
         // Load the description file to get the plugin's name and version
         PluginDescriptionFile pdfFile = this.getDescription();
-        Bukkit.getLogger().info(pdfFile.getName() + " version " + pdfFile.getVersion() + " has been enabled!");
+        logger.info(pdfFile.getName() + " version " + pdfFile.getVersion() + " has been enabled!");
 
         // Save default config if no config file exists
-        saveResource("config.yml", false);
+        saveDefaultConfig();
 
         // Load config and set up broadcasts
         FileConfiguration configuration = getConfig();
@@ -29,7 +33,7 @@ public class WebBroadcast extends JavaPlugin {
     public void onDisable() {
         //Load the description file to get the plugin's name and version
         PluginDescriptionFile pdfFile = this.getDescription();
-        Bukkit.getLogger().info(pdfFile.getName() + " version " + pdfFile.getVersion() + " has been disabled!");
+        logger.info(pdfFile.getName() + " version " + pdfFile.getVersion() + " has been disabled!");
     }
 
     /**

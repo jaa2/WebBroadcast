@@ -22,7 +22,7 @@ class BroadcastSender extends BukkitRunnable {
         try {
             url = makeUrlReplacements(url);
         } catch (MalformedURLException e) {
-            Bukkit.getLogger().warning("URL is malformed after replacements: " + url);
+            WebBroadcast.logger.warning("URL is malformed after replacements: " + url);
         }
 
         try {
@@ -30,9 +30,9 @@ class BroadcastSender extends BukkitRunnable {
             connection.connect();
             InputStreamReader is = new InputStreamReader(connection.getInputStream());
             is.close();
-            Bukkit.getLogger().info("Broadcast sent to " + url);
+            WebBroadcast.logger.info("Broadcast sent to " + url);
         } catch (IOException e) {
-            Bukkit.getLogger().warning("IOException while making request to " + broadcast.getUrl().toString()
+            WebBroadcast.logger.warning("IOException while making request to " + broadcast.getUrl().toString()
                 + ": " + e.getLocalizedMessage());
         }
     }

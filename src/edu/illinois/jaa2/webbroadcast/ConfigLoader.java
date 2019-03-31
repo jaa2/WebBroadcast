@@ -1,6 +1,5 @@
 package edu.illinois.jaa2.webbroadcast;
 
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.net.MalformedURLException;
@@ -40,13 +39,13 @@ class ConfigLoader {
                     try {
                         broadcasts.add(new Broadcast(new URL(urlStr), interval));
                     } catch (MalformedURLException e) {
-                        Bukkit.getLogger().warning("Malformed URL in config: " + urlStr);
+                        WebBroadcast.logger.warning("Malformed URL in config: " + urlStr);
                     }
                 }
             }
         }
 
-        Bukkit.getLogger().info(broadcasts.size() + " broadcast(s) loaded.");
+        WebBroadcast.logger.info(broadcasts.size() + " broadcast(s) loaded.");
 
         return broadcasts;
     }
