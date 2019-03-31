@@ -1,6 +1,13 @@
 # WebBroadcast configuration file
 
 # List each broadcast here, along with the URL and interval (in seconds) between broadcasts
+# In URLs, {SERVER_NAME} will be replaced with the server's name and {NUM_PLAYERS} will be replaced with the number of
+# players online
 broadcasts:
-- url: https://example.com/?server=minecraft
+# Broadcast to this URL every 20 minutes
+- url: https://example.com/?server={SERVER_NAME}&players={NUM_PLAYERS}
   interval: 1200
+
+# Broadcast to otherexample.com every hour
+#- url: https://otherexample.com/?server=minecraft
+#  interval: 3600
