@@ -1,0 +1,7 @@
+name: WebBroadcast
+version: 1.0.0
+description: "Makes periodic broadcasts to specific URLs"
+author: jaa2
+website: "https://github.com/jaa2/WebBroadcast"
+
+main: edu.illinois.jaa2.webbroadcast.WebBroadcast

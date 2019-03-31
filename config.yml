@@ -1,0 +1,6 @@
+# WebBroadcast configuration file
+
+# List each broadcast here, along with the URL and interval (in seconds) between broadcasts
+broadcasts:
+- url: https://example.com/?server=minecraft
+  interval: 1200
