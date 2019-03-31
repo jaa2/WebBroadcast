@@ -4,6 +4,7 @@
     <root id="archive" name="WebBroadcast.jar">
       <element id="file-copy" path="$PROJECT_DIR$/config.yml" />
       <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+      <element id="module-output" name="WebBroadcast" />
     </root>
   </artifact>
 </component>
