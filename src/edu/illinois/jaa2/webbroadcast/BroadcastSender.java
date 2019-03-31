@@ -48,7 +48,6 @@ class BroadcastSender extends BukkitRunnable {
         String urlStr = url.toExternalForm();
         urlStr = urlStr.replace("{NUM_PLAYERS}",
                 Integer.toString(Bukkit.getServer().getOnlinePlayers().size()));
-        urlStr = urlStr.replace("{SERVER_NAME}", Bukkit.getServer().getName());
         return new URL(urlStr);
     }
 }
